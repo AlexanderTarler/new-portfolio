@@ -11,6 +11,13 @@ const BrokenButton = () => {
     setIsBroken(true);
   };
 
+  const handleAnimationEnd = () => {
+    const dontPart: any = document.querySelector(".dont-part");
+    if (dontPart) {
+      dontPart.style.display = "none"; // This will hide the "Don't" part
+    }
+  };
+
   return (
     <div>
       <button
@@ -26,9 +33,7 @@ const BrokenButton = () => {
       {isBroken && (
         <div
           className="animate__animated animate__hinge dont-part"
-          onAnimationEnd={() => {
-            document.querySelector(".dont-part")!.classList.add("at-bottom");
-          }}
+          onAnimationEnd={handleAnimationEnd}
         >
           Don&apos;t
         </div>

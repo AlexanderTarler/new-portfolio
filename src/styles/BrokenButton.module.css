@@ -95,3 +95,22 @@
 .invisible {
   visibility: hidden;
 }
+
+/* CSS for the cracks */
+.crack {
+  position: absolute;
+
+  width: 50px; /* adjust as needed */
+  height: 50px; /* adjust as needed */
+  background: url("../../public/images/cracks.png") no-repeat center center; /* Use your crack image */
+  background-size: contain;
+  opacity: 0;
+  animation: showCracks 3s linear forwards;
+}
+
+/* Animation to gradually show the cracks */
+@keyframes showCracks {
+  to {
+    opacity: 1;
+  }
+}
