@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "animate.css";
+import styles from "../styles/BrokenButton.module.css";
 
 const BrokenButton = () => {
   const [isBroken, setIsBroken] = useState(false);
@@ -13,12 +14,14 @@ const BrokenButton = () => {
   return (
     <div>
       <button
-        className="broken__button"
+        className={`${styles.broken__button} ${
+          isBroken ? styles.glitched : ""
+        }`}
         onClick={breakTheButton}
         disabled={isBroken}
       >
-        <span className={isBroken ? "invisible" : ""}>Don&apos;t</span>
-        {isBroken ? " click here" : " click here"}
+        <span className={isBroken ? styles.invisible : ""}>Don&apos;t</span>
+        {isBroken ? "click here" : " click here"}
       </button>
       {isBroken && (
         <div
