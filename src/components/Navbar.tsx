@@ -10,23 +10,23 @@ const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navbarlist}>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
-          <Link href="/projects">
-            <div className={styles.navbaritemLink}>Projects</div>
+          <Link legacyBehavior href="/projects">
+            <a className={styles.navbaritemLink}>Projects</a>
           </Link>
         </li>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
-          <Link href="/cv">
-            <div className={styles.navbaritemLink}>CV</div>
+          <Link legacyBehavior href="/cv">
+            <a className={styles.navbaritemLink}>CV</a>
           </Link>
         </li>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
-          <Link href="/about">
-            <div className={styles.navbaritemLink}>About</div>
+          <Link legacyBehavior href="/about">
+            <a className={styles.navbaritemLink}>About</a>
           </Link>
         </li>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
-          <Link href="/blog">
-            <div className={styles.navbaritemLink}>Blog</div>
+          <Link legacyBehavior href="/blog">
+            <a className={styles.navbaritemLink}>Blog</a>
           </Link>
         </li>
       </ul>

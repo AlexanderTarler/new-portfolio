@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
+import React from "react";
+import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import Navbar from "@/components/Navbar";
 import { randomCSS } from "@/helpers/randomCSS";
@@ -11,12 +11,15 @@ const Header = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.mainTitle}>
-          <h1 className={[styles.firstT, randomCSS()].join(" ")}>T</h1>
-          <h1 className={[styles.bigA].join(" ")}>A</h1>
-          <h1 className={[styles.firstName, randomCSS()].join(" ")}>
-            LEXANDER
-          </h1>
-          <h1 className={[styles.lastName, randomCSS()].join(" ")}>RLER</h1>
+          <h1 className={`${styles.firstT} ${randomCSS()}`}>T</h1>
+          <Link legacyBehavior href="/">
+            <a className={styles.bigA}>A</a>
+          </Link>
+          <h1 className={`${styles.firstName} ${randomCSS()}`}>LEXANDER</h1>
+          <h1 className={`${styles.lastName} ${randomCSS()}`}>RLER</h1>
+          <h5 className={`${styles.tagline} ${randomCSS()}`}>
+            a developer at home where functionality meets creativity
+          </h5>
         </div>
         <Navbar />
       </header>

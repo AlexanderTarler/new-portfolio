@@ -5,7 +5,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,26 +19,40 @@
 }
 
 .bigA {
-  font-size: 500%;
+  font-size: 700%;
   position: relative;
   bottom: 120px;
   left: 100px;
+  text-decoration: none !important;
+  color: #565656;
+}
+
+.bigALink {
+  text-decoration: none !important;
 }
 
 .firstName {
   position: relative;
-  bottom: 315px;
-  left: 155px;
+  bottom: 310px;
+  left: 170px;
 }
 
 .lastName {
   position: relative;
-  bottom: 358px;
-  left: 180px;
+  bottom: 340px;
+  left: 195px;
 }
 
 .firstT {
   position: relative;
-  top: 80px;
-  left: 75px;
+  top: 56px;
+  left: 81px;
+}
+
+.tagline {
+  position: relative;
+  bottom: 350px;
+  left: 21px;
+
+  text-shadow: none;
 }

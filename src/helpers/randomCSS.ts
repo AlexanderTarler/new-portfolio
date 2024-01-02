@@ -10,6 +10,10 @@ export const randomCSS = () => {
     "animate__backInLeft",
     "animate__backInRight",
     "animate__backInUp",
+    "animate__fadeInDown",
+    "animate__fadeInLeft",
+    "animate__fadeInRight",
+    "animate__fadeInUp",
   ];
 
   const randomAnimation =
