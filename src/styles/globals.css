@@ -24,9 +24,9 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  animation: none;
+  animation: none; /* Remove animation to keep it at the bottom */
 }
 
 .invisible {
-  visibility: hidden;
+  visibility: hidden; /* Keeps the space but makes it invisible */
 }
