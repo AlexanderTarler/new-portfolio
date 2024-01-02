@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: "Philosopher", cursive;
+}
+
+.mainTitle {
+  font-size: 1.5em;
+  color: #565656;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.bigA {
+  font-size: 500%;
+  position: relative;
+  bottom: 120px;
+  left: 100px;
+}
+
+.firstName {
+  position: relative;
+  bottom: 315px;
+  left: 155px;
+}
+
+.lastName {
+  position: relative;
+  bottom: 358px;
+  left: 180px;
+}
+
+.firstT {
+  position: relative;
+  top: 80px;
+  left: 75px;
+}
