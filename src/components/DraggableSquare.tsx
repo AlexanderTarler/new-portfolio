@@ -28,7 +28,6 @@ const DraggableSquare = ({ onDrop }: any) => {
         position: "absolute",
         cursor: isDragging ? "grabbing" : "grab",
         border: "1px solid black",
-        // Set these to place the square where you want it to start
         top: "100px",
         left: "100px",
       }}

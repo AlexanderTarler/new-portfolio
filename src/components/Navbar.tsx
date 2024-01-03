@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
-import "../styles/Navbar.module.css";
 import { randomCSS } from "@/helpers/randomCSS";
+import CV from "@/app/cv/page";
+
 import "animate.css";
 
 const Navbar: React.FC = () => {
@@ -15,11 +16,6 @@ const Navbar: React.FC = () => {
           </Link>
         </li>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
-          <Link legacyBehavior href="/cv">
-            <a className={styles.navbaritemLink}>CV</a>
-          </Link>
-        </li>
-        <li className={[styles.navbaritem, randomCSS()].join(" ")}>
           <Link legacyBehavior href="/about">
             <a className={styles.navbaritemLink}>About</a>
           </Link>
@@ -28,6 +24,9 @@ const Navbar: React.FC = () => {
           <Link legacyBehavior href="/blog">
             <a className={styles.navbaritemLink}>Blog</a>
           </Link>
+        </li>
+        <li className={[styles.navbaritem, randomCSS()].join(" ")}>
+          <CV />
         </li>
       </ul>
     </nav>

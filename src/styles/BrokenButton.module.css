@@ -1,9 +1,20 @@
+/* Base glitch effect */
 .glitched {
-  animation: glitch 1s linear infinite;
-  position: relative; /* Ensure this is set for pseudo-elements positioning */
+  position: relative;
+  animation: glitchBase 1s linear infinite;
 }
 
-@keyframes glitch {
+/* Increased intensity */
+.glitched.glitch-intensity-1 {
+  animation: glitchIntensity1 1s linear infinite;
+}
+
+.glitched.glitch-intensity-2 {
+  animation: glitchIntensity2 1s linear infinite;
+}
+
+/* Define keyframes for each intensity level */
+@keyframes glitchBase {
   2%,
   64% {
     transform: translate(2px, -2px) skew(0deg);
@@ -20,59 +31,47 @@
   }
 }
 
-.glitched:before,
-.glitched:after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  color: black; /* Set the color as needed */
-  /* Ensure pseudo-elements are visible */
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.glitched:before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
+@keyframes glitchIntensity1 {
   2%,
   64% {
-    transform: translate(2px, -4px);
+    transform: translate(10px, -10px) skew(-5deg);
   }
   4%,
   60% {
-    transform: translate(-2px, 4px);
+    transform: translate(-8px, -4px) skew(5deg);
   }
-  62% {
-    transform: translate(13px, -3px) skew(-13deg);
+  89% {
+    transform: translate(0, 0) skew(10deg);
+  }
+  14% {
+    transform: translate(14px, 14px) skew(-10deg);
   }
 }
 
-.glitched:after {
-  animation: glitchBottom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBottom {
+@keyframes glitchIntensity2 {
   2%,
   64% {
-    transform: translate(-2px, 2px);
+    transform: translate(26px, -26px) skew(-10deg);
   }
   4%,
   60% {
-    transform: translate(-2px, -2px);
+    transform: translate(-22px, -6px) skew(10deg);
   }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
+  89% {
+    transform: translate(0, 0) skew(15deg);
+  }
+  14% {
+    transform: translate(36px, 26px) skew(-15deg);
   }
 }
 
-.broken__button {
+.broken__button__general {
   position: relative;
   top: 200px;
   left: 200px;
+}
+
+.broken__button {
   width: 150px;
   border: none;
   background: transparent;
@@ -80,10 +79,10 @@
   color: black;
 }
 
-.dont-part {
-  position: fixed;
-  margin-top: 190px;
-  left: 240px;
+.dont__part {
+  position: relative;
+  bottom: 3vh;
+  left: 2vw;
 }
 
 .at-bottom {
@@ -94,23 +93,4 @@
 
 .invisible {
   visibility: hidden;
-}
-
-/* CSS for the cracks */
-.crack {
-  position: absolute;
-
-  width: 50px; /* adjust as needed */
-  height: 50px; /* adjust as needed */
-  background: url("../../public/images/cracks.png") no-repeat center center; /* Use your crack image */
-  background-size: contain;
-  opacity: 0;
-  animation: showCracks 3s linear forwards;
-}
-
-/* Animation to gradually show the cracks */
-@keyframes showCracks {
-  to {
-    opacity: 1;
-  }
 }

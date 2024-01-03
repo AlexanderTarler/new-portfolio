@@ -59,8 +59,8 @@ const MatrixAnimation: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = 300; // Set the desired width
-    canvas.height = 600; // Set the desired height
+    canvas.width = 300;
+    canvas.height = 600;
     const symbolSize = 100;
     const columns = canvas.width / symbolSize;
     let doorWidth = canvas.width / 2;

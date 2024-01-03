@@ -25,7 +25,6 @@ const DropZone = ({
         width: "60px",
         height: "60px",
         position: "absolute",
-        // Position corresponding to the "matrix square"
       }}
     >
       {children}
