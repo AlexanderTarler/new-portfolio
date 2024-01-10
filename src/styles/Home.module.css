@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
 
+.home {
+  overflow: hidden; /* Prevents the page from scrolling */
+  height: 70vh;
+  width: 100%;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

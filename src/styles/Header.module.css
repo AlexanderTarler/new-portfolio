@@ -4,12 +4,15 @@
   position: fixed;
   top: 0;
   left: 0;
+  height: 174px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   font-family: "Philosopher", cursive;
+  background-color: #ffffff;
+  z-index: 10;
 }
 
 .mainTitle {
@@ -21,7 +24,7 @@
 .bigA {
   font-size: 700%;
   position: relative;
-  bottom: 120px;
+  top: 76px;
   left: 100px;
   text-decoration: none !important;
   color: #565656;
@@ -33,25 +36,25 @@
 
 .firstName {
   position: relative;
-  bottom: 310px;
+  bottom: 114px;
   left: 170px;
 }
 
 .lastName {
   position: relative;
-  bottom: 340px;
+  bottom: 144px;
   left: 195px;
 }
 
 .firstT {
   position: relative;
-  top: 56px;
+  top: 252px;
   left: 81px;
 }
 
 .tagline {
   position: relative;
-  bottom: 350px;
+  bottom: 156px;
   left: 21px;
 
   text-shadow: none;

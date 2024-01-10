@@ -8,7 +8,7 @@ import "animate.css";
 
 const HomePage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.home}>
       <ProjectDisplay projects={placeholderProjects} />
       <BrokenButton />
     </div>

@@ -1,7 +1,6 @@
 body {
   background-color: #ffffff;
   padding-top: 200px;
-  overflow: hidden; /* Prevents the page from scrolling */
 }
 
 .invisible {

@@ -30,10 +30,12 @@ const BrokenButton = () => {
   useEffect(() => {
     if (shouldFall) {
       // Select only the children of a specific container
-      const container = document.querySelector("#falling-elements-container");
+      const container = document.querySelector(
+        ".ProjectDisplay_project__display__YlG_l"
+      );
       console.log(container);
       if (container) {
-        container.querySelectorAll("*").forEach((el) => {
+        container.querySelectorAll("div").forEach((el) => {
           el.classList.add("fallAndDisappear");
         });
       }
