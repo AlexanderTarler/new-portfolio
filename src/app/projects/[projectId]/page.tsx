@@ -1,9 +1,10 @@
 "use client";
+// Import necessary dependencies
 import { useRouter, usePathname } from "next/navigation";
 import { projectList } from "@/db/projectList";
 import Image from "next/image";
 
-import styles from "@/styles/ProjectPage.module.css"; // You will create this CSS module
+import styles from "@/styles/ProjectPage.module.css";
 
 const ProjectPage = () => {
   const router = useRouter();
@@ -18,33 +19,57 @@ const ProjectPage = () => {
     return <p>Project not found!</p>;
   }
 
-  // Placeholder for project image, replace with actual image path
-  const projectImage = project.image || "/path/to/default/project/image.jpg";
+  // Use the project's image data or a placeholder image if not provided
+  const projectImage = project.image ? (
+    <Image
+      src={project.image.src}
+      alt={project.title}
+      width={project.image.width}
+      height={project.image.height}
+      className={styles.heroImage}
+    />
+  ) : (
+    <Image
+      src="/path/to/placeholder/image.jpg" // Replace with your placeholder image path
+      alt="Placeholder Image"
+      width={400} // Adjust the width and height as needed
+      height={200}
+      className={styles.heroImage}
+    />
+  );
 
   return (
     <div className={styles.projectContainer}>
-      {/* Hero Section */}
       <div className={styles.heroSection}>
-        <Image
-          src={projectImage}
-          alt={project.title}
-          className={styles.heroImage}
-        />
-        <h1 className={styles.projectTitle}>{project.title}</h1>
+        {projectImage}
+        <div className={styles.projectTitle}>{project.title}</div>
       </div>
-
-      {/* Project Information */}
       <div className={styles.projectInfo}>
-        <h2>Description</h2>
-        <p>{project.description}</p>
-        <h2>What I Learned</h2>
-        <p>{project.whatILearned}</p>
-        {/* Add more sections as needed */}
-      </div>
+        {/* Render project information here */}
+        <p>Status: {project.status}</p>
+        <p>Introduction: {project.introduction}</p>
+        <p>What I Learned: {project.whatILearned}</p>
+        <p>
+          Link:{" "}
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            {project.link}
+          </a>
+        </p>
 
-      {/* Navigation */}
-      <button onClick={() => router.back()} className={styles.goBackButton}>
-        Back to Projects
+        <p>Introduction: {project.introduction}</p>
+        <p>Background: {project.background}</p>
+        <p>Technologies: {project.technologies}</p>
+        <p>Features: {project.feautures}</p>
+        <p>User Journey: {project.userJourney}</p>
+        <p>Challenges and Solutions: {project.challengesAndSolutions}</p>
+        <p>Results: {project.results}</p>
+        <p>Development Process: {project.developmentProcess}</p>
+        <p>Code Samples: {project.codeSamples}</p>
+        <p>Live Demo: {project.liveDemo}</p>
+        <p>Testimonials: {project.testimonials}</p>
+      </div>
+      <button className={styles.goBackButton} onClick={() => router.back()}>
+        Go Back
       </button>
     </div>
   );

@@ -7,7 +7,17 @@ export interface Project {
     width: number;
     height: number;
   };
-  description: string;
+  introduction: string;
+  background: string;
+  technologies: string;
+  feautures: string;
+  userJourney: string;
+  challengesAndSolutions: string;
+  results: string;
+  developmentProcess: string;
+  codeSamples?: string;
+  liveDemo?: string;
+  testimonials?: string;
   whatILearned: string;
   link: string;
 }

@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
               <div className={styles.project__text}>
                 <h2>{project.title}</h2>
                 <p>{project.status}</p>
-                <p>{project.description}</p>
+                <p>{project.introduction}</p>
                 <p>{project.whatILearned}</p>
               </div>
             </a>
