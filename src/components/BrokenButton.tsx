@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "animate.css";
 import styles from "../styles/BrokenButton.module.css";
-import MatrixAnimation from "./MatrixAnimation";
+import { MyContext } from "@/context/context";
 
 const BrokenButton = () => {
   const [isBroken, setIsBroken] = useState(false);
@@ -10,37 +10,39 @@ const BrokenButton = () => {
   const [clickCount, setClickCount] = useState(0);
   const [warningText, setWarningText] = useState("");
   const [shouldFall, setShouldFall] = useState(false);
+  const [breakEffect, setBreakEffect] = useState(false);
+  const { globalState, updateGlobalState, test, setTest } =
+    useContext<any>(MyContext);
+
   const maxIntensity = 3;
 
   const breakTheButton = () => {
-    setIsBroken(true); // Set the button to broken the first time it's clicked
+    setIsBroken(true);
     setClickCount((prevCount) => {
       const newCount = prevCount + 1;
       console.log("clickCount", clickCount);
       warningTextSystem();
 
       if (newCount > 6) {
-        setShouldFall(true); // Trigger the fall and disappear animation
+        setShouldFall(true);
       }
-      setIsGlitching(newCount > 0); // If newCount is greater than 0, start glitching
-      return newCount; // Return the new count to update the state
+      setIsGlitching(newCount > 0);
+      return newCount;
     });
   };
 
   useEffect(() => {
     if (shouldFall) {
-      // Select only the children of a specific container
-      const container = document.querySelector(
-        ".ProjectDisplay_project__display__YlG_l"
-      );
-      console.log(container);
-      if (container) {
-        container.querySelectorAll("div").forEach((el) => {
-          el.classList.add("fallAndDisappear");
-        });
-      }
+      updateGlobalState({ isBroken: true });
+      console.log("globalState", globalState);
     }
   }, [shouldFall]);
+
+  useEffect(() => {
+    if (globalState.isBroken) {
+      console.log("globalState.isBroken", globalState.isBroken);
+    }
+  }, [globalState]);
 
   const handleAnimationEnd = () => {
     const dontPart = document.querySelector(".dont-part");

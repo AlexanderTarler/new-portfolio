@@ -6,7 +6,7 @@ export const projectList: Project[] = [
     title: "Accounting App",
     status: "In Progress",
     image: {
-      src: "https://picsum.photos/seed/picsumsadasd/200/300",
+      src: "https://picsum.photos/seed/picsumsadasd/300/200",
 
       width: 200,
       height: 100,
@@ -21,7 +21,7 @@ export const projectList: Project[] = [
     status: "In Progress",
 
     image: {
-      src: "https://picsum.photos/seed/picsumsadasd/200/300",
+      src: "https://picsum.photos/seed/picsumsadasd/300/200",
 
       width: 200,
       height: 100,
