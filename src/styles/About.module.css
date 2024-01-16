@@ -1,0 +1,28 @@
+.aboutPage {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Open Sans", sans-serif; /* Or any other font you prefer */
+}
+
+.bio,
+.connect {
+  margin-bottom: 2rem;
+}
+
+.aboutHeader {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.h2Title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
