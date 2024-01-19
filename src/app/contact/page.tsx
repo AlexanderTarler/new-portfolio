@@ -3,24 +3,6 @@ import React from "react";
 import styles from "@/styles/Contact.module.css";
 
 const BlogPosts: React.FC<any> = () => {
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: data,
-    });
-
-    if (response.ok) {
-      console.log("Message sent successfully");
-      form.reset();
-    } else {
-      console.log("An error occurred");
-    }
-  };
-
   return (
     <div>
       <form
@@ -29,6 +11,9 @@ const BlogPosts: React.FC<any> = () => {
         action="https://formspree.io/f/mnqenkpe"
         method="POST"
       >
+        <h2 className="contact__title">
+          Please leave a message if you wish to come in contact with me
+        </h2>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" required />

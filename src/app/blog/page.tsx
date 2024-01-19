@@ -16,7 +16,7 @@ const PlaceholderBlogPost: BlogPost = {
   content: "This is a placeholder blog post. Replace it with your own content.",
 };
 
-const BlogPosts: React.FC<any> = () => {
+const BlogPosts: React.FC<BlogPostsProps> = () => {
   const posts = [PlaceholderBlogPost];
 
   return (

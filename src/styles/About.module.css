@@ -26,3 +26,20 @@
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+
+.profileImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profileImageContainer img {
+  border-radius: 50%;
+  border: 3px solid #9c9b9b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}

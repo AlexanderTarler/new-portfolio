@@ -1,10 +1,19 @@
-// Import the CSS module<p className={styles.paragraph}>
+import Image from "next/image"; // Import the Image component from the correct package
 import Link from "next/link";
 import styles from "../../styles/About.module.css";
 
 const About: React.FC = () => {
   return (
     <div className={styles.aboutPage}>
+      <div className={styles.profileImageContainer}>
+        <Image
+          src="/images/profile_picture.png"
+          alt="Alexander Tarler"
+          width={200} // Set the width to the size of the image you want to display
+          height={200} // Set the height to the same value to maintain aspect ratio for a circle
+          layout="intrinsic" // Use "fixed" if the image should not resize with the viewport
+        />
+      </div>
       <h1 className={styles.aboutHeader}>About Me</h1>
       <section className={styles.intro}>
         <h2 className={styles.subheader}>Who&apos;s this guy?</h2>
@@ -73,9 +82,10 @@ const About: React.FC = () => {
           I believe in building solutions that make a difference and am always
           on the lookout for new challenges and opportunities to grow. If
           you&apos;re interested in collaborating or just want to say hi, feel
-          free to reach out through my website&apos;s contact form. Your message
-          will directly land in my inbox, and I&apos;ll be sure to get back to
-          you. Looking forward to connecting with you!
+          free to reach out through my website&apos;s{" "}
+          <Link href={"/contact"}>contact form</Link>. Your message will
+          directly land in my inbox, and I&apos;ll be sure to get back to you.
+          Looking forward to connecting with you!
           <p>Best regards, Alexander Tarler</p>
         </p>
       </section>
