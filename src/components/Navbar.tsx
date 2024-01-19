@@ -26,6 +26,11 @@ const Navbar: React.FC = () => {
           </Link>
         </li>
         <li className={[styles.navbaritem, randomCSS()].join(" ")}>
+          <Link legacyBehavior href="/contact">
+            <a className={styles.navbaritemLink}>Contact</a>
+          </Link>
+        </li>
+        <li className={[styles.navbaritem, randomCSS()].join(" ")}>
           <CV />
         </li>
       </ul>
