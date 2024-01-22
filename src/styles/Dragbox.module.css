@@ -1,0 +1,7 @@
+.dragBox {
+  padding: 10px;
+  margin: 10px;
+  background-color: #e0e0e0;
+  border: 2px dashed #999;
+  cursor: grab;
+}

@@ -1,4 +1,3 @@
-// DraggableSquare component
 import React, { useState } from "react";
 
 const DraggableSquare = ({ onDrop }: any) => {
@@ -6,7 +5,6 @@ const DraggableSquare = ({ onDrop }: any) => {
 
   const handleDragStart = (e: any) => {
     setIsDragging(true);
-    // Explicitly setting the draggable attribute to true
     e.target.setAttribute("draggable", "true");
     e.dataTransfer.setData("text/plain", e.target.id);
   };
@@ -18,7 +16,7 @@ const DraggableSquare = ({ onDrop }: any) => {
   return (
     <div
       id="draggable-square"
-      draggable="true" // Ensure this element is draggable
+      draggable="true"
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       style={{

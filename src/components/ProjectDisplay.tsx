@@ -1,5 +1,5 @@
 "use client";
-// Import necessary dependencies
+
 import React, { useContext } from "react";
 import Image from "next/image";
 import styles from "../styles/ProjectDisplay.module.css";

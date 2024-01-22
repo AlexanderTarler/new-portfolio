@@ -1,4 +1,4 @@
-import Image from "next/image"; // Import the Image component from the correct package
+import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/About.module.css";
 

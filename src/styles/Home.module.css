@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
 
 .home {
-  overflow: hidden; /* Prevents the page from scrolling */
+  overflow: hidden;
   height: 70vh;
   width: 100%;
 }
@@ -20,27 +20,50 @@
   text-shadow: 2px 2px 4px #000;
 }
 
-.bigA {
-  font-size: 500%;
-  position: relative;
-  bottom: 120px;
-  left: 100px;
+@media (min-width: 1024px) {
+  .bigA {
+    font-size: 5em;
+    position: relative;
+    bottom: 12%;
+    left: 10%;
+  }
+
+  .firstName {
+    position: relative;
+    bottom: 35%;
+    left: 15%;
+  }
+
+  .lastName {
+    position: relative;
+    bottom: 40%;
+    left: 18%;
+  }
+
+  .firstT {
+    position: relative;
+    top: 8%;
+    left: 7%;
+  }
 }
 
-.firstName {
-  position: relative;
-  bottom: 315px;
-  left: 155px;
+@media (max-width: 1023px) and (min-width: 768px) {
 }
 
-.lastName {
-  position: relative;
-  bottom: 358px;
-  left: 180px;
-}
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+  }
 
-.firstT {
-  position: relative;
-  top: 80px;
-  left: 75px;
+  .bigA,
+  .firstName,
+  .lastName,
+  .firstT {
+    font-size: 2.5em;
+    position: static;
+  }
+
+  .mainTitle {
+    font-size: 1.2em;
+  }
 }
