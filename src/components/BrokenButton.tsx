@@ -89,6 +89,7 @@ const BrokenButton = () => {
     if (clickCount > 6) {
       setWarningText("See what you did? You broke it. Now it's broken. Great.");
       setShakeEffect("animate__animated animate__shakeX animate__faster");
+      updateGlobalState({ firstItemFall: true });
 
       setCrackImage("/images/cracks_6.png");
     }
@@ -96,6 +97,14 @@ const BrokenButton = () => {
 
   return (
     <div className={`${styles.broken__button__general} ${shakeEffect}`}>
+      <p
+        className={`${styles.warning__text} ${
+          shouldFall ? "fallAndDisappear" : ""
+        }`}
+      >
+        {warningText}
+      </p>
+
       <button
         className={`${styles.broken__button} ${
           isGlitching ? styles.glitched : ""
@@ -114,7 +123,6 @@ const BrokenButton = () => {
           Don&apos;t
         </div>
       )}
-      <p className={`${shouldFall ? "fallAndDisappear" : ""}`}>{warningText}</p>
       {showCracks && (
         <Image
           src={crackImage}

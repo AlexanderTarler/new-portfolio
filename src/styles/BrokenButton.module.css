@@ -67,6 +67,8 @@
 
 .broken__button__general {
   position: relative;
+  z-index: 2;
+  bottom: 35em;
 }
 
 .broken__button {
@@ -95,8 +97,14 @@
 
 .cracks {
   position: relative;
-  bottom: 12vh;
-  z-index: -10 !important;
+  top: -12vh;
+  z-index: -7 !important;
+}
+
+.warning__text {
+  position: relative;
+  top: -12vh;
+  z-index: -7 !important;
 }
 
 @keyframes fallAndDisappear {

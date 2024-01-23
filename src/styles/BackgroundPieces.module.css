@@ -1,0 +1,41 @@
+.bgContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgPiece {
+  position: absolute;
+  width: 12.5%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+}
+
+.bg-piece-1 {
+  left: 0%;
+}
+.bg-piece-2 {
+  left: 12.5%;
+}
+.bg-piece-3 {
+  left: 25%;
+}
+.bg-piece-4 {
+  left: 37.5%;
+}
+.bg-piece-5 {
+  left: 50%;
+}
+.bg-piece-6 {
+  left: 62.5%;
+}
+.bg-piece-7 {
+  left: 75%;
+}
+.bg-piece-8 {
+  left: 87.5%;
+}

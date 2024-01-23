@@ -1,16 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "../styles/Home.module.css";
+import { placeholderProjects } from "@/helpers/placeholders";
 import BrokenButton from "@/components/BrokenButton";
 import ProjectDisplay from "@/components/ProjectDisplay";
-import { placeholderProjects } from "@/helpers/placeholders";
-import "animate.css";
+import MatrixBackground from "@/components/MatrixBackground";
+import BackgroundPieces from "@/components/BackgroundPieces";
 
 const HomePage = () => {
   return (
     <div className={styles.home}>
-      <ProjectDisplay projects={placeholderProjects} />
-      <BrokenButton />
+      <MatrixBackground />
+      <BackgroundPieces />
+      <ProjectDisplay projects={placeholderProjects} /> <BrokenButton />
     </div>
   );
 };

@@ -4,6 +4,12 @@
   overflow: hidden;
   height: 70vh;
   width: 100%;
+  background: none;
+}
+
+.broken__button__general,
+.project__display {
+  z-index: 100; /* Must be higher than BackgroundPieces and MatrixBackground! */
 }
 
 .header {

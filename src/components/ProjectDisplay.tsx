@@ -18,14 +18,21 @@ const ProjectDisplay: React.FC<ProjectDisplayProps> = () => {
         globalState.isBroken ? "fallAndDisappear" : ""
       }`}
     >
-      {projectList.map((project) => (
+      {projectList.map((project, index) => (
         <Link
           legacyBehavior
           key={project.id}
           href={`/projects/${project.id}`}
           passHref
         >
-          <div key={project.id} className={styles.project__display__item}>
+          <div
+            key={project.id}
+            className={`${styles.project__display__item} ${
+              index === 0 && globalState.firstItemFall
+                ? "animate__animated animate__rotateOutDownRight animate__faster"
+                : ""
+            }`}
+          >
             <Image
               src={project.image.src}
               width={project.image.width}
