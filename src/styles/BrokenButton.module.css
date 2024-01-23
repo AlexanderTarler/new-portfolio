@@ -67,8 +67,6 @@
 
 .broken__button__general {
   position: relative;
-  z-index: 2;
-  bottom: 35em;
 }
 
 .broken__button {

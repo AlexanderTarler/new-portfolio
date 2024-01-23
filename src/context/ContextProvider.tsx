@@ -4,7 +4,8 @@ import { MyContext } from "./context";
 
 interface GlobalState {
   isBroken: boolean;
-  firstItemFall: boolean; // New state to control the fall of the first project item
+  firstItemFall: boolean;
+  secondItemFall: boolean;
 }
 
 interface ContextProviderProps {
@@ -15,6 +16,7 @@ const ContextProvider: FC<ContextProviderProps> = ({ children }) => {
   const [globalState, setGlobalState] = useState<GlobalState>({
     isBroken: false,
     firstItemFall: false,
+    secondItemFall: false,
   });
 
   const [test, setTest] = useState(false);

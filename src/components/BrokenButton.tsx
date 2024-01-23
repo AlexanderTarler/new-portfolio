@@ -14,8 +14,7 @@ const BrokenButton = () => {
   const [crackImage, setCrackImage] = useState<any>("");
   const [showCracks, setShowCracks] = useState(false);
   const [shakeEffect, setShakeEffect] = useState<any>("");
-  const { globalState, updateGlobalState, test, setTest } =
-    useContext<any>(MyContext);
+  const { globalState, updateGlobalState } = useContext<any>(MyContext);
 
   const maxIntensity = 3;
 
@@ -123,7 +122,7 @@ const BrokenButton = () => {
           Don&apos;t
         </div>
       )}
-      {showCracks && (
+      {showCracks && !globalState.firstItemFall && (
         <Image
           src={crackImage}
           alt="cracks"

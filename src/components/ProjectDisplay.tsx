@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/ProjectDisplay.module.css";
 import { projectList } from "@/db/projectList";
@@ -10,7 +10,15 @@ import { ProjectDisplayProps } from "../helpers/interfaces";
 import Link from "next/link";
 
 const ProjectDisplay: React.FC<ProjectDisplayProps> = () => {
-  const { globalState } = useContext<any>(MyContext);
+  const { globalState, updateGlobalState } = useContext<any>(MyContext);
+
+  useEffect(() => {
+    if (globalState.firstItemFall === true) {
+      setTimeout(() => {
+        updateGlobalState({ secondItemFall: true });
+      }, 1000);
+    }
+  }, [globalState.firstItemFall === true]);
 
   return (
     <div
@@ -29,6 +37,10 @@ const ProjectDisplay: React.FC<ProjectDisplayProps> = () => {
             key={project.id}
             className={`${styles.project__display__item} ${
               index === 0 && globalState.firstItemFall
+                ? "animate__animated animate__rotateOutDownRight animate__faster"
+                : ""
+            } ${
+              index === 1 && globalState.secondItemFall
                 ? "animate__animated animate__rotateOutDownRight animate__faster"
                 : ""
             }`}
