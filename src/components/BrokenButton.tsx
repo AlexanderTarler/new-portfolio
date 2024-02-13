@@ -9,7 +9,7 @@ const BrokenButton = () => {
   const [isBroken, setIsBroken] = useState(false);
   const [isGlitching, setIsGlitching] = useState(false);
   const [clickCount, setClickCount] = useState(0);
-  const [warningText, setWarningText] = useState("");
+  const [inputVisibility, setInputVisibility] = useState(false);
   const [shouldFall, setShouldFall] = useState(false);
   const [crackImage, setCrackImage] = useState<any>("");
   const [showCracks, setShowCracks] = useState(false);
@@ -98,13 +98,22 @@ const BrokenButton = () => {
       updateGlobalState({ firstItemFall: true });
 
       setCrackImage("/images/cracks_6.png");
+
+      setTimeout(() => {
+        updateGlobalState({
+          warningText: "Would you mind helping me fix this?",
+        });
+        setInputVisibility(true);
+      }, 6000);
     }
   };
 
   return (
     <div className={`${styles.broken__button__general} ${shakeEffect}`}>
+      {inputVisibility && (
+        <input type="text" className={styles.user__input__field} />
+      )}
       <p className={`${styles.warning__text}`}>{globalState.warningText}</p>
-
       <button
         className={`${styles.broken__button} ${
           isGlitching ? styles.glitched : ""

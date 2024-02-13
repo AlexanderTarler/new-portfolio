@@ -124,3 +124,10 @@
 .fallAndDisappear {
   animation: fallAndDisappear 2s forwards;
 }
+
+.user__input__field {
+  background-color: black;
+  color: green;
+  border: 2px solid green;
+  outline: none;
+}
