@@ -6,6 +6,7 @@ import BrokenButton from "@/components/BrokenButton";
 import ProjectDisplay from "@/components/ProjectDisplay";
 import MatrixBackground from "@/components/MatrixBackground";
 import BackgroundPieces from "@/components/BackgroundPieces";
+import PhaserGameComponent from "@/phaser/PhaserGameComponent";
 
 const HomePage = () => {
   return (
