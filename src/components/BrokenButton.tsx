@@ -61,7 +61,9 @@ const BrokenButton = () => {
 
   const warningTextSystem = () => {
     if (clickCount > 1) {
-      setWarningText("Unstable code, please refrain from clicking.");
+      updateGlobalState({
+        warningText: "Unstable code, please refrain from clicking.",
+      });
       setCrackImage("/images/cracks_1.png");
       setShakeEffect("animate__animated animate__headShake");
       setShowCracks(true);
@@ -76,7 +78,9 @@ const BrokenButton = () => {
       setShakeEffect("animate__animated animate__headShake");
     }
     if (clickCount > 4) {
-      setWarningText("Stop clicking, you're going to break the site.");
+      updateGlobalState({
+        warningText: "Stop clicking, you're going to break the site.",
+      });
       setShakeEffect("animate__animated animate__shakeX animate__faster");
 
       setCrackImage("/images/cracks_4.png");
@@ -86,7 +90,10 @@ const BrokenButton = () => {
       setShakeEffect("animate__animated animate__headShake");
     }
     if (clickCount > 6) {
-      setWarningText("See what you did? You broke it. Now it's broken. Great.");
+      updateGlobalState({
+        warningText: "See what you did? You broke it. Now it's broken. Great.",
+      });
+
       setShakeEffect("animate__animated animate__shakeX animate__faster");
       updateGlobalState({ firstItemFall: true });
 
@@ -96,13 +103,7 @@ const BrokenButton = () => {
 
   return (
     <div className={`${styles.broken__button__general} ${shakeEffect}`}>
-      <p
-        className={`${styles.warning__text} ${
-          shouldFall ? "fallAndDisappear" : ""
-        }`}
-      >
-        {warningText}
-      </p>
+      <p className={`${styles.warning__text}`}>{globalState.warningText}</p>
 
       <button
         className={`${styles.broken__button} ${

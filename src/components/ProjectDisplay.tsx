@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/ProjectDisplay.module.css";
 import { projectList } from "@/db/projectList";
@@ -11,8 +11,12 @@ import Link from "next/link";
 
 const ProjectDisplay: React.FC<ProjectDisplayProps> = () => {
   const { globalState, updateGlobalState } = useContext<any>(MyContext);
+  const [visibility, setVisibility] = useState(true);
 
   useEffect(() => {
+    if (globalState.brokenBackground) {
+      setVisibility(false);
+    }
     if (globalState.firstItemFall === true) {
       setTimeout(() => {
         updateGlobalState({ secondItemFall: true });
@@ -23,8 +27,8 @@ const ProjectDisplay: React.FC<ProjectDisplayProps> = () => {
   return (
     <div
       className={`${styles.project__display} ${
-        globalState.isBroken ? "fallAndDisappear" : ""
-      }`}
+        globalState.brokenBackground ? "project__display__visibility" : ""
+      } ${globalState.isBroken ? "fallAndDisappear" : ""} `}
     >
       {projectList.map((project, index) => (
         <Link

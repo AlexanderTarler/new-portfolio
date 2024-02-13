@@ -13,7 +13,8 @@ const HomePage = () => {
     <div className={styles.home}>
       <MatrixBackground />
       <BackgroundPieces />
-      <ProjectDisplay projects={placeholderProjects} /> <BrokenButton />
+      <ProjectDisplay projects={placeholderProjects} />
+      <BrokenButton />
     </div>
   );
 };

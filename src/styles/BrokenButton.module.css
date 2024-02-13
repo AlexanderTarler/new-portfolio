@@ -101,7 +101,7 @@
 
 .warning__text {
   position: relative;
-  top: -12vh;
+  top: -20vh;
   z-index: -7 !important;
   color: green;
   background-color: black;

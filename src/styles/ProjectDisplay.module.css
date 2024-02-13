@@ -21,6 +21,10 @@
   transform: scale(1.05);
 }
 
+.project__display__visibility {
+  visibility: hidden;
+}
+
 @keyframes fallAndDisappear {
   0% {
     transform: translateY(0);

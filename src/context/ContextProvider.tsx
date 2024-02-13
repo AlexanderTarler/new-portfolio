@@ -7,6 +7,7 @@ interface GlobalState {
   firstItemFall: boolean;
   secondItemFall: boolean;
   warningText: string;
+  brokenBackground: boolean;
 }
 
 interface ContextProviderProps {
@@ -19,6 +20,7 @@ const ContextProvider: FC<ContextProviderProps> = ({ children }) => {
     firstItemFall: false,
     secondItemFall: false,
     warningText: "",
+    brokenBackground: false,
   });
 
   const [test, setTest] = useState(false);
