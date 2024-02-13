@@ -14,9 +14,35 @@ const BrokenButton = () => {
   const [crackImage, setCrackImage] = useState<any>("");
   const [showCracks, setShowCracks] = useState(false);
   const [shakeEffect, setShakeEffect] = useState<any>("");
+  const [inputValue, setInputValue] = useState(""); // To store the user's input
+  const [otherInputCount, setOtherInputCount] = useState(0);
+
   const { globalState, updateGlobalState } = useContext<any>(MyContext);
 
   const maxIntensity = 3;
+
+  const otherResponses = [
+    "Sorry?",
+    "Hmm, try again.",
+    "I don't understand.",
+    "Could you be clearer?",
+  ];
+
+  const handleInputChange = (e: { target: { value: string } }) => {
+    const value = e.target.value.toLowerCase(); // Normalize input to lowercase
+    setInputValue(value); // Update the input value state
+
+    if (value === "yes") {
+      updateGlobalState({ warningText: "Great!" });
+    } else if (value === "no") {
+      updateGlobalState({ warningText: "No? It's your mess." });
+    } else {
+      // Cycle through the otherResponses array based on otherInputCount
+      const responseIndex = otherInputCount % otherResponses.length;
+      updateGlobalState({ warningText: otherResponses[responseIndex] });
+      setOtherInputCount((prevCount) => prevCount + 1); // Increment counter for unexpected inputs
+    }
+  };
 
   const breakTheButton = () => {
     setIsBroken(true);
@@ -111,7 +137,12 @@ const BrokenButton = () => {
   return (
     <div className={`${styles.broken__button__general} ${shakeEffect}`}>
       {inputVisibility && (
-        <input type="text" className={styles.user__input__field} />
+        <input
+          type="text"
+          className={styles.user__input__field}
+          onChange={handleInputChange} // Add the onChange event listener here
+          value={inputValue} // Control the input with state
+        />
       )}
       <p className={`${styles.warning__text}`}>{globalState.warningText}</p>
       <button
